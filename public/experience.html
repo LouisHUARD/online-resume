@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="GitLab Pages">
+    <title>Louis HUARD C.V</title>
+    <link rel="stylesheet" href="css/body.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/experience.css">
+  </head>
+
+  <body>
+
+    <header>
+      <nav class="navbar">
+        <a href="./index.html">Accueil</a>
+        <a href="./cursus.html">Cursus</a>
+        <a href="./competences.html">Compétences</a>
+        <a class="actif" href="./experience.html">Experience</a>
+        <a href="./realisations.html">Réalisations</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+    </header>
+
+
+    <div class="experiences">
+
+      <h1>Mes expériences professionelles :</h1>
+
+        <button class="accordion">
+        <span class="date">Avril 2026 - Juin 2026</span> - Stage de 2e année : Laboratoire LAMEL
+        </button>
+      <div class="panel">
+        <div class="div_image">
+          <img src="./ressources/img/vignettes/code_carmel.png">
+        </div>
+        <h2>Stage en laboratoire sur le loigiciel code_carmel</h2>
+        <ul>
+          <li>Programmation Python/Fortran</li>
+          <li>Conception d'interfaces web</li>
+        </ul>
+      </div>
+
+      <button class="accordion">
+        <span class="date">Août 2025</span> - Auxiliaire vactaire : Douanes
+      </button>
+      <div class="panel">
+        <div class="div_image">
+          <img src="./ressources/img/vignettes/douanes.png" height="10%" width="10%">
+        </div>        
+        <h2>Direction Régionale des Douanes et Droits Indirects Nord, Lille</h2>
+        <ul>
+          <li>Amélioration d’un système de gestion des arrêts médicaux (2 solutions proposées : SQL/Base et Calc).</li>
+          <li>Gestion des dossiers, saisie de données, tri et archivage.</li>
+          <li>Soutien informatique et bureautique.</li>
+        </ul>
+      </div>
+
+      
+      <a id="ld" href="https://www.linkedin.com/in/louis-huard-a12aa2386/#experience">
+        <img src="./ressources/img/vignettes/linkedin.avif" height="5%" width="5%">
+      </a>
+
+    </div>
+
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+      });
+    }
+  </script>
+
+
+
+  </body>
+</html>

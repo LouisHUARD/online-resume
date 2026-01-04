@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="GitLab Pages">
+    <title>Louis HUARD C.V</title>
+    <link rel="stylesheet" href="css/body.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/competences.css">
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="navbar">
+        <a href="./index.html">Accueil</a>
+        <a href="./cursus.html">Cursus</a>
+        <a class="actif" href="./competences.html">Compétences</a>
+        <a href="./experience.html">Experience</a>
+        <a href="./realisations.html">Réalisations</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+    </header>
+
+    <h1>Mes compétences :</h1>
+
+    <div class="main_menu">
+      <div class="left_side">
+        <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Recherche.." title="">
+        <ul id="myMenu">
+          <li>
+            <button class="skill tablinks" onclick="openSkill(event,'HTML/CSS')">
+              HTML/CSS
+              <img src="./ressources/img/vignettes/html_css.png" width="10%" height="10%">
+            </button>
+          </li>
+          <li>
+            <button class="skill tablinks" onclick="openSkill(event,'SQL')">
+              SQL
+              <img src="./ressources/img/vignettes/sql.png" width="10%" height="10%">
+            </button>
+          </li>
+          <li>
+            <button class="skill tablinks" onclick="openSkill(event,'Java')">
+              Java
+              <img src="./ressources/img/vignettes/java.png" width="10%" height="10%">
+            </button>
+          </li>
+          <li>
+            <button class="skill tablinks" onclick="openSkill(event,'Bas niveau')">
+              Bas niveau
+              <img src="./ressources/img/vignettes/c_logo.png" width="10%" height="10%">
+            </button>
+          </li>
+          <li>
+            <button class="skill tablinks" onclick="openSkill(event,'Schématisation')">
+              Schématisation
+              <img src="./ressources/img/vignettes/uml.png" width="10%" height="10%">
+            </button>
+          </li>
+          <li>
+            <button class="skill tablinks" onclick="openSkill(event,'Outils')">
+              Outils collaboratifs
+            <img src="./ressources/img/vignettes/git.png" width="15%" height="10%">
+            </button>
+          </li>
+          <li>
+            <button class="skill tablinks" onclick="openSkill(event,'Rédaction')">
+              Rédaction
+              <img src="./ressources/img/vignettes/markdown.png" width="10%" height="10%">
+            </button>
+          </li>
+        </ul>
+      </div>
+
+
+
+      <div class="right_side">
+        <div id="HTML/CSS" class="tabcontent">
+          <h3>London</h3>
+          <p>London is the capital city of England.</p>
+        </div>
+
+        <div id="SQL" class="tabcontent">
+          <h3>Paris</h3>
+          <p>Paris is the capital of France.</p>
+        </div>
+
+        <div id="Java" class="tabcontent">
+          <h3>Tokyo</h3>
+          <p>Tokyo is the capital of Japan.</p>
+        </div>
+      </div>
+ 
+    </div>
+
+    <script>
+    function myFunction() {
+      // Declare variables
+      var input, filter, ul, li, a, i;
+      input = document.getElementById("mySearch");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myMenu");
+      li = ul.getElementsByTagName("li");
+
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("button")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+    </script>
+
+    <script>
+      function openSkill(evt, skill) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+
+      // Get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+
+      // Show the current tab, and add an "active" class to the link that opened the tab
+      document.getElementById(skill).style.display = "block";
+      evt.currentTarget.className += " active";
+    
+      document.querySelector(".right_side")
+      .classList.add("active");
+    
+    }
+    </script>
+
+  </body>
+</html>

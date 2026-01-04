@@ -1,0 +1,54 @@
+
+
+#identity{
+  padding: 1%;
+
+  background-image: url("../ressources/img/space.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:top;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+
+
+  border-bottom: 10px;
+  border-style: solid;
+  border-color: #313236;
+
+  color: beige;
+  text-shadow:
+  -1px -1px 0 #000,
+    0   -1px 0 #000,
+    1px -1px 0 #000,
+    1px  0   0 #000,
+    1px  1px 0 #000,
+    0    1px 0 #000,
+  -1px  1px 0 #000,
+  -1px  0   0 #000;
+
+}
+
+
+#profile-picture{
+  border-radius: 50%;
+  width: 15%;
+  height: 20%;
+  border-color: beige;
+  border-width: 10%;
+  border-style: solid;
+}
+
+#presentation{
+  margin-left: 5%;
+  color: #313236;
+}
+
+#presentation p{
+  font-size: 12pt;
+}

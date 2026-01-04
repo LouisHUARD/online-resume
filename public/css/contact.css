@@ -1,0 +1,98 @@
+h1{
+    margin-left: 5%;
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+.contacts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "mail phone image"
+      "linkedin linkedin image";
+    gap: 30px;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.contacts-item {
+    display: flex;
+    align-items: center; 
+    gap: 20px;      
+    font-size: 1.4rem;
+}
+
+
+.contacts-item img {
+    padding-left: 1%;
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.mail {
+    grid-area: mail;
+}
+
+.phone {
+    grid-area: phone;
+}
+
+.image-side {
+    grid-area: image;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkedin {
+    grid-area: linkedin;
+    justify-content: center;
+}
+
+
+.linkedin a {
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    color: #0072B1;
+}
+
+.mail ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mail ul li{
+    margin-bottom: 5%;
+}
+
+.mail ul li a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #313236;
+}
+
+.image-side img {
+    max-width: 100%;
+    max-height: 80%;
+    border-radius: 50%;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.contacts-item:hover{
+    border-radius: 25px;
+    background-color: #313236;
+    color: beige;
+    transition: 
+    background-color 0.5s linear, 
+    color 0.2s linear;
+}
+
+.contacts-item:hover ul a{
+    color: beige;
+}

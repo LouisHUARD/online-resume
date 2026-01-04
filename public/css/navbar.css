@@ -1,0 +1,30 @@
+.navbar {
+    background-color: #313236;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items:flex-start;
+    border-radius: 2px;
+    max-width: 100%;
+    padding-left: 10%;
+}
+
+.navbar a {
+    color: white;
+    display: inline-block;
+    font-size: 15px;
+
+    text-decoration: none;
+    text-align: center;
+    
+    padding: 1%;
+    margin: 0.5%;
+}
+
+.navbar a:hover{
+  background-color: darkgreen;
+}
+
+.navbar a.actif{
+    background-color: green;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="GitLab Pages">
+    <title>Louis HUARD C.V</title>
+    <link rel="stylesheet" href="css/body.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/realisations.css">
+  </head>
+
+  <body>
+
+    <header>
+      <div class="navbar">
+        <a href="./index.html">Accueil</a>
+        <a href="./cursus.html">Cursus</a>
+        <a href="./competences.html">Compétences</a>
+        <a href="./experience.html">Experience</a>
+        <a class="actif" href="./realisations.html">Réalisations</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+    </header>
+
+<h2>PORTFOLIO</h2>
+
+<div class="filters">
+  <button class="filter-btn active" onclick="filterProjects('all')">Tous</button>
+  <button class="filter-btn" onclick="filterProjects('web')">Web</button>
+  <button class="filter-btn" onclick="filterProjects('java')">Java</button>
+  <button class="filter-btn" onclick="filterProjects('sql')">SQL</button>
+</div>
+
+<div class="portfolio">
+
+  <div class="card web" onclick="openModal(this)">
+    <img src="img/cv.png" alt="Site CV">
+    <h3>Site CV</h3>
+    <p>HTML / CSS</p>
+
+    <div class="modal-content">
+      <h2>Site CV</h2>
+      <p>Site personnel développé en HTML et CSS, hébergé sur GitLab Pages.</p>
+    </div>
+  </div>
+
+  <div class="card java" onclick="openModal(this)">
+    <img src="img/java.png" alt="Projet Java">
+    <h3>Application Java</h3>
+    <p>POO</p>
+
+    <div class="modal-content">
+      <h2>Application Java</h2>
+      <p>Projet Java orienté objet avec gestion de données.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="modal" id="modal">
+  <div class="modal-box" id="modalBox"></div>
+</div>
+
+</div>
+    
+
+<script>
+function filterProjects(category) {
+  const cards = document.getElementsByClassName("card");
+
+  for (let card of cards) {
+    card.style.display =
+      category === "all" || card.classList.contains(category)
+        ? "block"
+        : "none";
+  }
+}
+
+function openModal(card) {
+  document.getElementById("modalBox").innerHTML =
+    card.querySelector(".modal-content").innerHTML;
+  document.getElementById("modal").style.display = "flex";
+}
+
+document.getElementById("modal").onclick = () => {
+  document.getElementById("modal").style.display = "none";
+};
+</script>
+
+  </body>
+</html>
+
