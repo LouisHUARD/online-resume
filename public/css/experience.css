@@ -71,3 +71,12 @@
   margin-top: 1%;
 }
 
+#titre{
+    margin-left: 5%;
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+p{
+  text-align: justify;
+}

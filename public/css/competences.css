@@ -52,6 +52,7 @@ h1{
 
 .right_side div{
   height: 100%;
+  padding: 1%;
   overflow-y: scroll;
 }
 
@@ -63,6 +64,14 @@ h1{
   display: none;
 }
 
+.right_side h3{
+  font-size: 2em;
+}
+
+.right_side p{
+  text-align: justify;
+  font-size: 1.5em;
+}
 
 
 #myMenu button {
@@ -96,4 +105,10 @@ h1{
 
 .tablinks.active {
   background-color: grey !important;
+}
+
+#titre{
+    margin-left: 5%;
+    text-decoration: underline;
+    font-weight: bolder;
 }

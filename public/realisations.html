@@ -22,38 +22,122 @@
       </div>
     </header>
 
-<h2>PORTFOLIO</h2>
+
+
+<h1 id="titre">Portfolio</h1>
 
 <div class="filters">
   <button class="filter-btn active" onclick="filterProjects('all')">Tous</button>
   <button class="filter-btn" onclick="filterProjects('web')">Web</button>
   <button class="filter-btn" onclick="filterProjects('java')">Java</button>
-  <button class="filter-btn" onclick="filterProjects('sql')">SQL</button>
+  <button class="filter-btn" onclick="filterProjects('reseau')">Réseau</button>
 </div>
 
 <div class="portfolio">
 
-  <div class="card web" onclick="openModal(this)">
-    <img src="img/cv.png" alt="Site CV">
-    <h3>Site CV</h3>
-    <p>HTML / CSS</p>
+  <div class="card java" onclick="openModal(this)">
+    <img src="./ressources/img/miniature/warfare.png" alt="Touche dans le jeu">
+    <h3>WooquiWarfare</h3>
+    <p>Jeu en terminal de bataille navale en version simplifiée de Java</p>
 
     <div class="modal-content">
-      <h2>Site CV</h2>
-      <p>Site personnel développé en HTML et CSS, hébergé sur GitLab Pages.</p>
+      <h2>WooquiWarfare</h2>
+      <h3>Semestre 1</h3>
+      <p>
+        Jeu ludique de bataille navale programmé avec une version simplifiée de Java, iJava. L'aspect ludique vient de questions de mathématiques posées aux joueurs à chaque tentative de tir.
+        <br><br>
+        J'étais responsable de la modélisation compléte du projet, du code de la sauvegarde des parties et de facto chef de projet.
+      </p>
+
+      <h4>Compétences apprises :</h4>
+      <ul>
+        <li>Premiers pas dans la conception objet : UML, choix des classes, pertinence des méthodes</li>
+        <li>Gestion des fichiers externes grâce à Java</li>
+        <li>Travail collaboratif sur Git et LiveShare</li>
+      </ul>
+  
+      <a href="https://gitlab.univ-lille.fr/sae_duo/warfare">Lien vers Git</a>
     </div>
   </div>
+
 
   <div class="card java" onclick="openModal(this)">
-    <img src="img/java.png" alt="Projet Java">
-    <h3>Application Java</h3>
-    <p>POO</p>
+    <img src="./ressources/img/miniature/duoguessr.png" alt="Feuille de gestion des étudiants">
+    <h3>DuoGuessr</h3>
+    <p>Application d'appariements d'étudiants</p>
 
     <div class="modal-content">
-      <h2>Application Java</h2>
-      <p>Projet Java orienté objet avec gestion de données.</p>
+      <h2>DuoGuessr</h2>
+      <h3>Semestre 2</h3>
+      <p>
+        Logiciel permettant de planifier un voyage d'échange en associant des étudiants en fonction de différents critères. L'appariement optimal devait être trouvé par l 'utilisation de l'algorithme hongrois. Il devait être possible d'ajouter des conditions préalable, comme empêcher deux étudiants d'être mis ensemble ou le contraire. De plus, il devait être possible de pondérer les critères et recalculer l'appariement. Enfin, un système de sauvegarde binaire devait être mis en place.
+        <br><br>
+        J'étais responsable de certains aspects graphiques, de la gestion des fichiers FXML avec un StageManager, de l'algorithme Hongrois et la conception objet du logiciel. J'étais aussi chef de groupe et je devais donc distribuer la charge de travail et discuter avec les professeurs.
+      </p>        
+      <h4>Compétences apprises :</h4>
+      <ul>
+        <li>Intégration de JavaFX dans un projet concret par le biais d'un StageManager et de fichiers FXML (SceneBuilder)</li>
+        <li>Prémices de refactoring face à des défis nouveaux</li>
+      </ul>
+
+      <a href="https://gitlab.univ-lille.fr/sae2.01-2.02/2025/B2">Lien vers Git</a>
     </div>
   </div>
+
+
+  
+  <div class="card java" onclick="openModal(this)">
+    <img src="./ressources/img/miniature/laborynth.png" alt="Labyrinthe simple">
+    <h3>LaboRynth</h3>
+    <p>Jeu de génération de labyrinthes aléatoires et parfaits</p>
+
+    <div class="modal-content">
+      <h2>LaboRynth</h2>
+      <h3>Semestre 3</h3>
+      <p>
+        Jeu de résolution de labyrinthes, avec génération de labyrinthes aléatoires, parfaits et des vues spéicifques (mini-carte, brouillard de guerre...). Le jeu comporte un mode libre (labyrinthe unique) et un mode progression avec difficulté croissante, qui est sauvegardé. Enfin, on trouve aussi un dessinateur de labyrinthes.
+        <br><br>
+        J'étais responsable de la vue initiale, des algorithmes de génération parfaite et de l'aspect qualité de code du projet (structure de l'archive, patterns à utiliser, clean code, interfaces...). En tant que chef du projet, je devais aussi coordiner les autres membres, distribuer la charge de travail et rattraper leurs manquements.
+        <h4>Compétences apprises :</h4>
+        <ul>
+          <li>Utilisations concrétes de patterns (Factory, Singleton, Stratégie, MVC)</li>
+          <li>Avancées sur JavaFX</li>
+          <li>Utilisations de nouvelles structures de données : choix parmi Collection pour efficacité, structure adaptées à un problème complexe (Union Find)</li>
+          <li>Refactoring du code pour s'adapter à des nouveaux attendus</li>
+          <li>Gestion de l'héritage et des interfaces pour avoir le code le plus générique possible, ce qui permet d'être plus robuste et préparé aux refactorings.</li>
+          <li>Enquête client pour limiter la portée du travail et ne pas être hors-sujet</li>
+        </ul>
+      </p>
+      <a href="https://gitlab.univ-lille.fr/sae302/2025/J3_SAE3.3e">Lien vers Git</a>
+    </div>
+  </div>
+
+  <div class="card web" onclick="openModal(this)">
+    <img src="./ressources/img/miniature/covoiturage.png" alt="Page de paiement">
+    <h3>Service d'éco-mobilité</h3>
+    <p>Création d'un site web statique pour promouvoir un service d'éco-mobilité.</p>
+
+    <div class="modal-content">
+      <h2>Site éco-mobilité</h2>
+      <h3>Semestre 1</h3>
+      <p>
+        Site statique simulant un service web d'éco-mobilité pour une entreprise, ici Microsoft. Le service offrait du covoiturage ou de la location de véhicule. Un faux système de paiement et connexion devait aussi être mis en place.
+        <br><br>
+        J'étais responsable du découpage du site, de la charte graphique principale, des pages de : paiement, réglement d'utilisation, connexion, accueil.  
+
+        <h4>Compétences apprises :</h4>
+
+        <ul>
+          <li>Premier pas avec HTML/CSS</li>
+          <li>Positionnement CSS : flex et grid</li>
+          <li>Utilisation d'animations</li>
+          <li>Déploiement sur Git</li>
+        </ul>
+      </p>
+      <a href="https://github.com/LouisHUARD/SAE-Site-WEB">Lien vers Git</a>
+    </div>
+  </div>
+
 
 </div>
 
@@ -67,6 +151,7 @@
 <script>
 function filterProjects(category) {
   const cards = document.getElementsByClassName("card");
+  const buttons = document.getElementsByClassName("filter-btn");
 
   for (let card of cards) {
     card.style.display =
@@ -74,6 +159,12 @@ function filterProjects(category) {
         ? "block"
         : "none";
   }
+
+  for (let btn of buttons) {
+    btn.classList.remove("active");
+  }
+
+  event.target.classList.add("active");
 }
 
 function openModal(card) {

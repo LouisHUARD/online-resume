@@ -46,9 +46,15 @@
 
 #presentation{
   margin-left: 5%;
+  margin-right: 5%;
   color: #313236;
 }
 
 #presentation p{
   font-size: 12pt;
+  text-align: justify;
+}
+#titre{
+    text-decoration: underline;
+    font-weight: bolder;
 }

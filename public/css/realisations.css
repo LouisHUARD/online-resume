@@ -42,3 +42,42 @@
 .modal-content {
   display: none;
 }
+
+.filters {
+  margin: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.filters button {
+  background-color: #313236;
+  color: beige;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.filters button:hover {
+  background-color: darkgreen;
+}
+
+.filters button.active{
+  background-color: green;
+}
+
+.portfolio{
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+#titre{
+    margin-left: 5%;
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+p{
+  text-align: justify;
+}
