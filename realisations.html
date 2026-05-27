@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="GitLab Pages">
+    <title>Louis HUARD C.V</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/body.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/realisations.css">
+    <script src="src/realisations.ts" type="module"></script>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="navbar">
+        <a href="./index.html">Accueil</a>
+        <a href="./cursus.html">Cursus</a>
+        <a href="./competences.html">Compétences</a>
+        <a href="./experience.html">Experience</a>
+        <a class="actif" href="./realisations.html">Réalisations</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+    </header>
+
+
+
+<h1 id="titre">Portfolio</h1>
+
+<div class="filters">
+  <button class="filter-btn active" onclick="filterProjects('all')">Tous</button>
+  <button class="filter-btn" onclick="filterProjects('web')">Web</button>
+  <button class="filter-btn" onclick="filterProjects('java')">Java</button>
+  <button class="filter-btn" onclick="filterProjects('reseau')">Réseau</button>
+</div>
+
+<div class="portfolio">
+
+</div>
+
+<div class="modal" id="modal">
+  <div class="modal-box" id="modalBox"></div>
+</div>
+
+</div>
+    
+
+<script>
+function filterProjects(category) {
+  const cards = document.getElementsByClassName("card");
+  const buttons = document.getElementsByClassName("filter-btn");
+
+  for (let card of cards) {
+    card.style.display =
+      category === "all" || card.classList.contains(category)
+        ? "block"
+        : "none";
+  }
+
+  for (let btn of buttons) {
+    btn.classList.remove("active");
+  }
+
+  event.target.classList.add("active");
+}
+
+function openModal(card) {
+  document.getElementById("modalBox").innerHTML =
+    card.querySelector(".modal-content").innerHTML;
+  document.getElementById("modal").style.display = "flex";
+}
+
+document.getElementById("modal").onclick = () => {
+  document.getElementById("modal").style.display = "none";
+};
+</script>
+
+  </body>
+</html>
+
