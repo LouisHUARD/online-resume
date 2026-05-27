@@ -28,7 +28,7 @@ export default class Carousel {
 
         images.forEach(image => {
             if ((typeof image == "string")) {
-                imagesAsHTML += `<div class="carousel-item"><img src="/ressources/img${image}" class="d-block w-100" alt=""></div>`;
+                imagesAsHTML += `<div class="carousel-item"><img src="ressources/img${image}" class="d-block w-100" alt=""></div>`;
                 allButtons += `<li data-bs-target="#" data-bs-slide-to="${idxButton++}"></li>`
             }
         });
