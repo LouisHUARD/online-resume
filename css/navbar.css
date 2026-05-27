@@ -1,4 +1,4 @@
-.navbar {
+nav.mynavbar {
     background-color: #313236;
     overflow: hidden;
     display: flex;
@@ -9,7 +9,7 @@
     padding-left: 10%;
 }
 
-.navbar a {
+nav.mynavbar a {
     color: white;
     display: inline-block;
     font-size: 15px;
@@ -21,10 +21,10 @@
     margin: 0.5%;
 }
 
-.navbar a:hover{
+nav.mynavbar a:hover{
   background-color: darkgreen;
 }
 
-.navbar a.actif{
+nav.mynavbar a.actif{
     background-color: green;
 }

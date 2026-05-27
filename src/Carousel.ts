@@ -29,7 +29,7 @@ export default class Carousel {
         images.forEach(image => {
             if ((typeof image == "string")) {
                 imagesAsHTML += `<div class="carousel-item"><img src="/ressources/img${image}" class="d-block w-100" alt=""></div>`;
-                allButtons += `<button type="button" data-bs-target="#" data-bs-slide-to="${idxButton++}"></button>`
+                allButtons += `<li data-bs-target="#" data-bs-slide-to="${idxButton++}"></li>`
             }
         });
 
@@ -40,7 +40,7 @@ export default class Carousel {
         this.images = this.element.querySelectorAll('.carousel-item');
 
 
-        this.paginations = this.indicators.querySelectorAll('button')!;
+        this.paginations = this.indicators.querySelectorAll('li')!;
 
         this.changeActiveSprite(0);
 
@@ -108,5 +108,11 @@ export default class Carousel {
 
             this.active_index = newActiveIdx;
         }
+    }
+
+    cycleImages(){
+        const newActiveIdx = (this.active_index + 1) % (this.images!.length);
+        this.changeActiveSprite(newActiveIdx);
+        setTimeout(()=>this.cycleImages(), 2500);
     }
 }

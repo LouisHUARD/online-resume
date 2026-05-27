@@ -1,9 +1,13 @@
 [
   {
     "title": "Test",
-    "context" : "TestContewte",
+    "context" : "Ceci est le contexte",
 
-    "summary" : "Salut",
+    "tags":[
+      "test"
+    ],
+
+    "summary" : "Voici mon premier paragraphe.<br><br>Voici mon deuxième paragraphe avec du <strong>texte en gras</strong>.Voici mon premier paragraphe.<br><br>Voici mon deuxième paragraphe avec du <strong>texte en gras</strong>.",
 
     "skills": {
       "hardSkills": [
@@ -33,6 +37,10 @@
   {
     "title": "Test2",
     "context" : "TestContewte",
+
+    "tags":[
+      "ta"
+    ],
 
     "summary" : "Salut",
 

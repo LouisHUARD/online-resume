@@ -8,6 +8,8 @@ interface Skill {
 interface Project{
     title : string;
 
+    tags : Array<string>
+
     context : string;
 
     summary : string;
@@ -25,13 +27,16 @@ interface Project{
 }
 
 class ProjectGallery {
-    element: HTMLElement;
+    portfolio: HTMLElement;
+    filters:HTMLElement;
     projects: Array<ProjectCard>;
+    tags : Set<string>;
 
-    constructor(element: HTMLElement) {
-        this.element=element;
+    constructor(portfolio: HTMLElement, filters: HTMLElement) {
+        this.portfolio=portfolio;
+        this.filters=filters;
         this.projects=new Array<ProjectCard>
-
+        this.tags=new Set<string>
         this.generateProjectCards()
     }
 
@@ -41,21 +46,63 @@ class ProjectGallery {
         }).then(projects=>{
             projects.forEach( (project:Project) =>{
                 this.addProjectCard(project);
+                project.tags.forEach(tag => {
+                    this.tags.add(tag)
+                });
             })
+            this.addTagButtons()
         })
     }
 
     addProjectCard(project: Project): void {
         const projectCard = new ProjectCard(project);
         this.projects.push(projectCard);
-        this.element.appendChild(projectCard.element);
+        this.portfolio.appendChild(projectCard.element);
+    }
+
+    addTagButtons(){
+        this.filters.innerHTML+=`<button class="filter-btn" tag='all'>Tous</button>`;
+
+        this.tags.forEach( tag =>{
+            this.filters.innerHTML+=`<button class="filter-btn" tag='${tag}'>${tag}</button>`;
+        })
+
+        const filter_buttons=this.filters.querySelectorAll('.filter-btn');
+        filter_buttons.forEach( button => {
+            let tag = button.getAttribute('tag');
+            if (tag){
+                button.addEventListener('click', (event) => this.filterCards(event));
+            }
+        } )
+    }
+
+    filterCards(event:Event){
+        event.preventDefault()
+        const formerActive=this.filters.querySelector('button.active')
+        if (formerActive) {
+            formerActive.classList.remove('active')
+        }
+
+        const button=event.currentTarget as HTMLElement;
+        button.classList.add('active')
+        const tag=button.getAttribute('tag');
+        if (tag){
+            const displayAll:boolean = (tag=='all');
+            console.log('Filtrage sur '+tag);
+            console.log(this.projects);
+            this.projects.forEach( project => {
+                    let visible = displayAll || project.tags.includes(tag);
+                    project.setVisibility(visible);
+            } )
+        }
     }
 
 }
 
 class ProjectCard{
     element: HTMLElement;
-    imageCarousel : Carousel;
+    imageCarousel: Carousel;
+    tags: Array<string>;
 
     constructor(project: Project){
         this.element=document.createElement('div');
@@ -65,6 +112,11 @@ class ProjectCard{
 
         this.imageCarousel = new Carousel(this.element.querySelector('.carousel')!);
         this.imageCarousel.setImages(project.screenCaps)
+        this.imageCarousel.cycleImages()
+
+        this.tags = project.tags
+
+        this.element.addEventListener('click', event => this.handleClickOnCard(event))
     }
 
     buildHTMLTag(project:Project){
@@ -87,8 +139,6 @@ class ProjectCard{
             <div class="projectCardContent">
                 <p>${project.summary}</p>
             </div>
-            
-            <button class="btn-details">Détails</button>
         `
     }
 
@@ -98,8 +148,14 @@ class ProjectCard{
         console.log(target)
     }
 
+    setVisibility(visible:boolean){
+        this.element.style.display = visible ? 'block' : 'none'; 
+    }
+
 }
 
 console.log('Démarrage portfolio')
 
-new ProjectGallery(document.querySelector('.portfolio')!)
+const portfolio:HTMLElement=document.querySelector('.portfolio')!
+const filters:HTMLElement=document.querySelector('.filters')!
+new ProjectGallery(portfolio, filters)
