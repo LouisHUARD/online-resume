@@ -8,6 +8,8 @@ export default class Carousel {
     carousel_inner: Element;
     indicators: Element;
 
+    autoPlayTimer: number | null = null;
+
     constructor(element: Element) {
         this.element = element;
 
@@ -25,14 +27,15 @@ export default class Carousel {
         let allButtons = "";
         let idxButton = 0;
 
-
-        images.forEach(image => {
-            if ((typeof image == "string")) {
-                imagesAsHTML += `<div class="carousel-item"><img src="ressources/img${image}" class="d-block w-100" alt=""></div>`;
-                allButtons += `<li data-bs-target="#" data-bs-slide-to="${idxButton++}"></li>`
-            }
-        });
-
+        if (images){
+            images.forEach(image => {
+                if ((typeof image == "string")) {
+                    imagesAsHTML += `<div class="carousel-item"><img src="ressources/img${image}" class="d-block w-100" alt=""></div>`;
+                    allButtons += `<li data-bs-target="#" data-bs-slide-to="${idxButton++}"></li>`
+                }
+            });
+        }
+            
 
         this.carousel_inner.innerHTML = imagesAsHTML;
         this.indicators.innerHTML = allButtons;
@@ -113,6 +116,13 @@ export default class Carousel {
     cycleImages(){
         const newActiveIdx = (this.active_index + 1) % (this.images!.length);
         this.changeActiveSprite(newActiveIdx);
-        setTimeout(()=>this.cycleImages(), 2500);
+        this.autoPlayTimer=window.setTimeout(()=>this.cycleImages(), 3000);
+    }
+
+    destroy() {
+        if (this.autoPlayTimer) {
+            clearTimeout(this.autoPlayTimer);
+            this.autoPlayTimer = null;
+        }
     }
 }

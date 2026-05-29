@@ -34,39 +34,6 @@
   <div class="modal-box" id="modalBox"></div>
 </div>
 
-</div>
-    
-
-<script>
-function filterProjects(category) {
-  const cards = document.getElementsByClassName("card");
-  const buttons = document.getElementsByClassName("filter-btn");
-
-  for (let card of cards) {
-    card.style.display =
-      category === "all" || card.classList.contains(category)
-        ? "block"
-        : "none";
-  }
-
-  for (let btn of buttons) {
-    btn.classList.remove("active");
-  }
-
-  event.target.classList.add("active");
-}
-
-function openModal(card) {
-  document.getElementById("modalBox").innerHTML =
-    card.querySelector(".modal-content").innerHTML;
-  document.getElementById("modal").style.display = "flex";
-}
-
-document.getElementById("modal").onclick = () => {
-  document.getElementById("modal").style.display = "none";
-};
-</script>
-
   </body>
 </html>
 

@@ -8,54 +8,116 @@ interface Skill {
 interface Project{
     title : string;
 
-    tags : Array<string>
-
     context : string;
 
-    summary : string;
-
-    skills : {
-        hardSkills: Array<Skill>;
-        softSkills: Array<Skill>;
-    }
-
-    personalImplication : string;
+    tags : Array<string>
 
     screenCaps: Array<string>;
 
-    analysis: string;
+    summary : string;
+
+    body : string
 }
 
 class ProjectGallery {
     portfolio: HTMLElement;
     filters:HTMLElement;
+    modal:HTMLElement;
+
     projects: Array<ProjectCard>;
     tags : Set<string>;
 
-    constructor(portfolio: HTMLElement, filters: HTMLElement) {
+    activeModalCarousel: Carousel | null = null;
+
+    constructor(portfolio: HTMLElement, filters: HTMLElement, modal: HTMLElement) {
         this.portfolio=portfolio;
         this.filters=filters;
+        this.modal=modal
         this.projects=new Array<ProjectCard>
         this.tags=new Set<string>
         this.generateProjectCards()
+
+
     }
 
     generateProjectCards(){
-        fetch("/ressources/json/projects/projects.json").then(res=>{
-            return res.json();
-        }).then(projects=>{
-            projects.forEach( (project:Project) =>{
+        const markdownFiles = import.meta.glob('./projects/*.md', { eager: true });
+        console.log(markdownFiles)
+        const projects:Array<Project> = Object.values(markdownFiles).map((file: any) => {
+        return {
+                title: file.attributes.title,
+                context: file.attributes.context,
+                tags: file.attributes.tags,
+                screenCaps: file.attributes.screenCaps,
+                summary: file.attributes.summary,
+                body: file.html
+        };
+        });   
+        console.log(projects)
+        
+        projects.forEach( (project:Project) =>{
                 this.addProjectCard(project);
                 project.tags.forEach(tag => {
                     this.tags.add(tag)
                 });
             })
             this.addTagButtons()
-        })
+
     }
 
     addProjectCard(project: Project): void {
-        const projectCard = new ProjectCard(project);
+
+        const openModalCallback = (project : Project) => {
+                if (this.activeModalCarousel) {
+                    this.activeModalCarousel.destroy();
+                }
+
+                const modalBox = this.modal.querySelector('.modal-box')!
+
+                modalBox.innerHTML= `
+                <div class="modal-container">
+                    <div class="modal-header">
+                        <h2>${project.title}</h2>
+                        <button class="close-modal">&times;</button>
+                    </div>
+                    <div class="context">
+                        <h3>${project.context}</h3>
+                        <p>${project.summary}</p>
+                    </div>
+                    <div class="carousel modal-carousel">
+                        <div class="carousel-indicators"></div>
+                        <div class="carousel-inner"></div>
+                        <a class="carousel-control-prev" href="#" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </a>
+                    </div>
+
+                    <div class="modal-body">
+                        ${project.body}
+                    </div>
+                </div>
+            `;
+            const close_button = this.modal.querySelector('.close-modal')!
+            close_button.addEventListener('click', (_event)=>{
+                this.modal.style.display = "none"
+
+                if (this.activeModalCarousel) {
+                    this.activeModalCarousel.destroy();
+                    this.activeModalCarousel = null; 
+                }
+            })
+
+            this.activeModalCarousel = new Carousel(this.modal);
+            this.activeModalCarousel.setImages(project.screenCaps);
+            this.activeModalCarousel.cycleImages();
+
+            this.modal.style.display = "flex";
+        };
+
+        const projectCard = new ProjectCard(project, openModalCallback);
         this.projects.push(projectCard);
         this.portfolio.appendChild(projectCard.element);
     }
@@ -104,7 +166,7 @@ class ProjectCard{
     imageCarousel: Carousel;
     tags: Array<string>;
 
-    constructor(project: Project){
+    constructor(project: Project, openModalCallback:(p:Project)=>void){
         this.element=document.createElement('div');
         this.element.classList.add('projectCard');
 
@@ -112,11 +174,15 @@ class ProjectCard{
 
         this.imageCarousel = new Carousel(this.element.querySelector('.carousel')!);
         this.imageCarousel.setImages(project.screenCaps)
-        this.imageCarousel.cycleImages()
 
         this.tags = project.tags
 
-        this.element.addEventListener('click', event => this.handleClickOnCard(event))
+        this.element.addEventListener('click', (event:Event) =>{
+            event.preventDefault()
+            openModalCallback(project)
+        })
+
+        setTimeout(()=>this.imageCarousel.cycleImages(), 3000);
     }
 
     buildHTMLTag(project:Project){
@@ -142,20 +208,14 @@ class ProjectCard{
         `
     }
 
-    handleClickOnCard(event: Event){
-        event.preventDefault();
-        const target = event.target as HTMLElement;
-        console.log(target)
-    }
-
     setVisibility(visible:boolean){
         this.element.style.display = visible ? 'block' : 'none'; 
     }
-
 }
 
 console.log('Démarrage portfolio')
 
 const portfolio:HTMLElement=document.querySelector('.portfolio')!
 const filters:HTMLElement=document.querySelector('.filters')!
-new ProjectGallery(portfolio, filters)
+const modal:HTMLElement=document.querySelector('.modal')!
+new ProjectGallery(portfolio, filters, modal)
