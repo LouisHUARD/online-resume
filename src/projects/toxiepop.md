@@ -6,6 +6,7 @@ screenCaps:
   - "/miniature/toxie-1.png"
 
 summary: "Shoot-Them-Up sur navigateur avec jeu multijoueur."
+order: "1"
 ---
 
 ## Objectifs du projet 
@@ -20,7 +21,7 @@ Durant ce projet, j'ai changé de mon habitude de prendre les devants pour être
 
 ## Résultats 
 
-Le jeu est parfaitement jouable, en multi comme en solo. Mes collègues ont vraiment réussi l'esthétique, tant dans la direction artistique du jeu en lui-même qu sur les pages intermédiaires. Le mouvement reste quelque peu saccadé, mais cela n'empêche pas de jouer normalement.
+Le jeu est parfaitement jouable, en multi comme en solo. Mes collègues ont vraiment réussi l'esthétique, tant dans la direction artistique du jeu en lui-même que sur les pages intermédiaires. Le mouvement reste quelque peu saccadé, mais cela n'empêche pas de jouer normalement.
 
 <u>Note finale</u> : **17.90/20**
 
@@ -28,7 +29,7 @@ Le jeu est parfaitement jouable, en multi comme en solo. Mes collègues ont vrai
 
 ### Compétences techniques 
 
-* **Code type-script front** : Le client du jeu (accueil, paramètres, écran de jeu) a été codé en TypeScrit. J'ai notamment développé le déplacement clavier et souris.
+* **Code type-script front** : Le client du jeu (accueil, paramètres, écran de jeu) a été codé en TypeScript. J'ai notamment développé le déplacement clavier et souris.
 * **Code back-end (Node.js)** : Le serveur qui envoie les informations aux clients et sa boucle de jeu, aussi codés en TypeScript. J'ai travaillé sur le serveur du début jusqu'à un niveau intermédiaire, principalement sur ses échanges avec le client au cours de la boucle de jeu.
 
 ### Compétences transversales
@@ -46,4 +47,4 @@ Mon second regret est d'avoir passé beaucoup trop de temps sur des problèmes, 
 
 ## Lien du Gitlab
 
-[ToxiePop](https://gitlab.univ-lille.fr/jsae/2025-2026/projets/groupe-h/equipe-2/equipe-2)
+[ToxiePop](https://github.com/LouisHUARD/ToxiePop)

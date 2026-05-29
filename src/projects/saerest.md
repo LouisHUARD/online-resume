@@ -5,8 +5,8 @@ tags: ["SQL", "Java","Rest"]
 screenCaps: 
   - "/miniature/rest-1.png"
   - "/miniature/rest-2.webp"
-
 summary: "Implémentation d'un service REST"
+order: "2"
 ---
 
 ## Objectifs du projet 
@@ -21,16 +21,16 @@ Pour répondre à ce problème, nous avons  :
 
 ## Rôle personnel
 
-J'ai implémenté la plupart des endpoints, avec toutes les méthodes (GET,POST,PUT,PATCH,DELETE...) incluses. J'ai développé des méthodes génériques reprises par tous les endpoints, avec des paramètres pour s'accomoder à chaque situation. Ensuite, j'ai refactorisé tous les endpoints pour avoir une structure beaucoup plus claire : l'exécution s'effectuait sans aucune erreur, puis chaque exception (personnalisées) étaient traitées cas par cas. Cela a augmenté exponentiellement la lisibilité du code. J'ai aussi créé plusieurs DTO pour faciliter l'écriture des différentes méthodes des endpoints.
+J'ai implémenté la plupart des endpoints, avec toutes les méthodes (GET,POST,PUT,PATCH,DELETE...) incluses. J'ai développé des méthodes génériques reprises par tous les endpoints, avec des paramètres pour s'accommoder à chaque situation. Ensuite, j'ai refactorisé tous les endpoints pour avoir une structure beaucoup plus claire : l'exécution s'effectuait sans aucune erreur, puis chaque exception (personnalisées) étaient traitées cas par cas. Cela a augmenté exponentiellement la lisibilité du code. J'ai aussi créé plusieurs DTO pour faciliter l'écriture des différentes méthodes des endpoints.
 
 J'ai codé le système de token en base 64 et rajouté l'authentification nécessaire aux endpoints qui la demandaient. J'ai aussi corrigé des tests Brunos, notamment à l'ajout des token.
-Enfin, j'ai rédigé la documentation sur les endpoints, leurs code de retour et d'erreur, leur niveau d'autentification, l'allure des objets récupérés...
+Enfin, j'ai rédigé la documentation sur les endpoints, leurs code de retour et d'erreur, leur niveau d'authentification, l'allure des objets récupérés...
 
 ## Résultats 
 
-Je suis très fier des différents DAO des endpoints, car leur système d'exception permet une lisibilité accrue, couplée à une gestion minutieuse des cas d'erreurs possibles. Il sont très faciles à étendre ou modifier 
+Je suis très fier des différents DAO des endpoints, car leur système d'exception permet une lisibilité accrue, couplée à une gestion minutieuse des cas d'erreurs possibles. Ils sont très faciles à étendre ou modifier 
 Nous avons aussi travaillé sur un objet de source de données plus poussé que celui utilisé en TP.
-Enfin, nos tests couvraient tous les cas possibles, et montraient que le cahier des charges étaient scrupuleusement respecté, tant dans les codes de retour que dans la forme des résultats.
+Enfin, nos tests couvraient tous les cas possibles, et montraient que le cahier des charges était scrupuleusement respecté, tant dans les codes de retour que dans la forme des résultats.
 
 Note finale : **19.00/20.00**
 
@@ -54,4 +54,4 @@ Cette SAE s'est très bien passé, nous avons su évoluer face aux consignes cha
 
 ## Lien Git
 
-[LaboRynth](https://gitlab.univ-lille.fr/huard-sauve_s4.a.01.1/sujet1-ecodrop)
+[EcoDrop](https://github.com/LouisHUARD/EcoDrop)

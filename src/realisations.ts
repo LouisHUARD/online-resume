@@ -7,15 +7,11 @@ interface Skill {
 
 interface Project{
     title : string;
-
     context : string;
-
     tags : Array<string>
-
     screenCaps: Array<string>;
-
     summary : string;
-
+    order: number;
     body : string
 }
 
@@ -50,11 +46,12 @@ class ProjectGallery {
                 tags: file.attributes.tags,
                 screenCaps: file.attributes.screenCaps,
                 summary: file.attributes.summary,
+                order: file.attributes.order,
                 body: file.html
         };
         });   
-        console.log(projects)
-        
+        projects.sort((a:Project, b:Project) => a.order-b.order)
+
         projects.forEach( (project:Project) =>{
                 this.addProjectCard(project);
                 project.tags.forEach(tag => {

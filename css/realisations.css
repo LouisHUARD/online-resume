@@ -97,6 +97,7 @@ display: none;
 .filters {
   margin: 20px;
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -131,4 +132,13 @@ display: none;
 
 p{
   text-align: justify;
+}
+
+.projectCard .carousel-inner img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  
+  object-fit: cover;
+  object-position: center; 
+  border-radius: 8px;
 }

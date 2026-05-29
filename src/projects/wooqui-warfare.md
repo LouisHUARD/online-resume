@@ -8,13 +8,14 @@ screenCaps:
   - "/miniature/warfare-3.png"
 
 summary: "Jeu en terminal de bataille navale en version simplifiée de Java, avec un aspect ludique mathématique"
+order: "8"
 ---
 
 ## Objectifs du projet 
 
 L'objectif principal du projet était de nous introduire à des programmes Java (ici développé avec une version réduite de Java nommée iJava) plus importants que ceux de TP, et avec plus de liberté dans les consignes. Pour ce faire, nous avions pour tâche de créer un jeu basique, limité au terminal. De plus, celui-ci devait comporter un aspect ludique car il serait potentiellement présenté à des collégiens.
 
-Pour répondre à ce défi, mon binôme et moi avons choisi de créer un jeu de bataille navale où chaque tir devait être validé par une question de mathématique, le tout sur fond de monde post-apocalyptiques à armes de destruction massive contrôlés par des équations.
+Pour répondre à ce défi, mon binôme et moi avons choisi de créer un jeu de bataille navale où chaque tir devait être validé par une question de mathématique, le tout sur fond de monde post-apocalyptique à armes de destruction massive contrôlés par des équations.
 
 ## Rôle personnel
 
@@ -25,7 +26,7 @@ J'ai notamment travaillé sur la construction des navires, la sécurisation des 
 ## Résultats 
 
 Nous avons obtenu un jeu satisfaisant, sans bugs apparents. Le système de sauvegarde était fonctionnel et les parties se déroulaient sans soucis. 
-D'autant plus, nous avons été sélectionné pour la présentation auprès des collégiens, et bien que seulement deux groupes aient eu l'occasion de tester notre jeu, les deux s'en sont pris à coeur joie. 
+D'autant plus, nous avons été sélectionné pour la présentation auprès des collégiens, et bien que seulement deux groupes aient eu l'occasion de tester notre jeu, les deux s'en sont donnés à coeur joie. 
 
 <u>Note finale</u> : **15.50/20** pour le rendu, **19.00/20** pour la soutenance
 
@@ -33,7 +34,7 @@ D'autant plus, nous avons été sélectionné pour la présentation auprès des 
 
 ### Compétences techniques 
 
-* **Programmation orienté objet basique** : classes, énumérations, héritage, polymorphisme : Ce projet a été notre premier comportant une réelle organisation de classes liées les unes aux autres.
+* **Programmation orientée objet basique** : classes, énumérations, héritage, polymorphisme : Ce projet a été notre premier comportant une réelle organisation de classes liées les unes aux autres.
 * **Structuration d'archives** : Nous avons appris à correctement placer nos classes, nos binaires (ignorés sur le git)
 * **Création d'UML** : nous avons maintenu un UML à jour du projet tout au long de son évolution afin d'avoir en tête les responsabilités de chacun et de débattre de la logique de certains points
 * **Code en Java** : Bien que nous étions limité à une version simplifiée de Java, ce projet constitue tout de même notre premier projet Java, et pour moi, mon premier projet de développement informatique.
@@ -52,7 +53,7 @@ Ce projet constituant notre premier travail plus conséquent qu'un simple TP, il
 
 J'y ai découvert que j'aimais écrire du code extensible et lisible (en tout cas à mes yeux) plutôt que de privilégier l'optimisation et la rapidité de rendu à tout prix.
 
-Le point le plus important, et c'est qui nous a couté beaucoup de points, est que le code était trop lourd. Les fichiers n'étaient pas assez aérés, les conventions de nommages parfois dûr à interpréter, il y'avait peu de commentaires... C'est un point qui m'a marqué et qui a influencé ma méthode de travail dans la suite. 
+Le point le plus important, et c'est qui nous a couté beaucoup de points, est que le code était trop lourd. Les fichiers n'étaient pas assez aérés, les conventions de nommages parfois dur à interpréter, il y avait peu de commentaires... C'est un point qui m'a marqué et qui a influencé ma méthode de travail dans la suite. 
 
 Le système de sauvegarde était assez complexe, surtout à cause d'une erreur communication avec notre responsable, mais il reste fonctionnel et j'en suis content.
 
@@ -66,4 +67,4 @@ Ce projet a débuté ma passion pour un domaine qui me tient à coeur : la conce
 
 ## Lien du Gitlab
 
-[Wooqui-warfare](https://gitlab.univ-lille.fr/sae_duo/warfare.git)
+[Wooqui-warfare](https://github.com/LouisHUARD/WooquiWarfare)

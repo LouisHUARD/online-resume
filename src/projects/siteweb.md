@@ -7,6 +7,7 @@ screenCaps:
   - "/miniature/covoiturage-2.png"
 
 summary: "Site Web statique simulant une plateforme d'entreprise pour un déplacement éco-responsable (co-voiturage, location)."
+order: "9"
 ---
 
 ## Objectifs du projet 
@@ -17,7 +18,7 @@ Ce projet faisait partie d'un plus grand projet commun à plusieurs matières, m
 
 ## Rôle personnel
 
-Durant ce projet, j'ai assumé le rôle de chef d'équipe et j'ai donc réparti la charge de travail de chacun. J'ai dirigé la conception des maquettes des différentes pages, en classant les priorités et en estimant la faisabilité des différents idées que nous avons eu au cours des brainstorming. De plus, j'ai établi la charte graphique à suivre pour imiter le style de Microsoft.
+Durant ce projet, j'ai assumé le rôle de chef d'équipe et j'ai donc réparti la charge de travail de chacun. J'ai dirigé la conception des maquettes des différentes pages, en classant les priorités et en estimant la faisabilité des différentes idées que nous avons eu au cours des brainstorming. De plus, j'ai établi la charte graphique à suivre pour imiter le style de Microsoft.
 J'ai aussi été notre relai avec les professeurs pour valider nos avancées et s'assurer du respect du cahier des charges. 
 
 J'ai travaillé sur la plupart des pages, tant en structure que sur le visuel, notamment l'accueil, les règles, la connexion et le panier, dont je suis le plus fier.
@@ -43,7 +44,7 @@ J'ai été très satisfait du rendu final de nos pages. Bien que le site était 
 * **Travailler ses faiblesse** : J'avais beaucoup de difficultés avec le Web en début de BUT, j'ai donc du redoubler d'efforts en aménageant des plages de travail supplémentaires pour rattraper mon retard, affiner mes rendus et découvrir des nouvelles techniques de Web.
 * **Chercher les bonnes informations** : En lien avec compétence ci-dessus, pour améliorer mon site, j'ai beaucoup échangé avec mon binôme et les autres équipes pour avoir des retours sur le rendu visuel de notre site, sur sa lisibilité et sa compréhension. J'en aussi profité pour apprendre des notions de Web design auprès de mes camarades plus expérimentés.
 * **Planifier avec des maquettes** : Le projet a commencé par la réalisation de maquettes. C'est une compétence importante car elle permet de guider le développement et donner un aperçu initial, mais il est primordial de ne pas se fixer des objectifs irréalisables, sans pour autant se limiter au minimum. 
-* **S'adapter aux problèmes de coordination** : Un des membres de notre équipe était peu coopératif, et nous avons donc du accomoder notre rythme de travail.
+* **S'adapter aux problèmes de coordination** : Un des membres de notre équipe était peu coopératif, et nous avons donc du accommoder notre rythme de travail.
 
 ## Analyse 
 
@@ -51,7 +52,7 @@ Ce projet, bien que de faible envergure, m'a initialement poussé dans mes retra
 
 D'un point de vue technique, la structure HTML reste assez basique et le CSS utilise des sélecteurs beaucoup trop précis et spécifiques. En plus d'améliorer ces points, j'aurai aimé rendre le site dynamique en y introduisant des scripts JavaScript.
 
-Un des membres du groupe a eu une participation plus que décevante, d'autant plus que c'était la plus expérimentée en Web. Malgré plusieurs relances, la situation n'a pas évolué. Ma réponse finale, et celle de mon binôme, a été de s'isoler et de ne faire confiance qu'à nous-même. En tant que chef de groupe, j'ai commencé par trop de conciliance et fini sur un rejet total de l'élément problématique : une erreur indubitable. Avec du recul, si c'était à refaire, j'équilibrerai mieux indulgence et rigeur, et je travaillerai mieux sur la communication interne au groupe.
+Un des membres du groupe a eu une participation plus que décevante, d'autant plus que c'était la plus expérimentée en Web. Malgré plusieurs relances, la situation n'a pas évolué. Ma réponse finale, et celle de mon binôme, a été de s'isoler et de ne faire confiance qu'à nous-même. En tant que chef de groupe, j'ai commencé par trop de conciliance et fini sur un rejet total de l'élément problématique : une erreur indubitable. Avec du recul, si c'était à refaire, j'équilibrerai mieux indulgence et rigueur, et je travaillerai mieux sur la communication interne au groupe.
 
 ## Lien du Gitlab
 
